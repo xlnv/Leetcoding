@@ -25,16 +25,22 @@ public class Solution05 {
     }
 
     public static int[] twoSum(int[] nums, int target) {
+        // 创建一个哈希表来存储数组元素和对应的索引
         Map<Integer, Integer> map = new HashMap<>();
 
+        // 遍历数组中的每个元素
         for (int i = 0; i < nums.length; i++) {
-            int temp = target - nums[i];
+            // 计算当前元素与目标值的差值
+            int complement = target - nums[i];
 
-            if (map.containsKey(temp)) {
-                return new int[]{map.get(temp), i};
+            // 检查哈希表中是否已存在这个差值
+            if (map.containsKey(complement)) {
+                // 如果存在，返回当前元素的索引和差值的索引
+                return new int[] { map.get(complement), i };
             }
-            map.put(nums[i], i);
 
+            // 将当前元素及其索引存入哈希表
+            map.put(nums[i], i);
         }
         return null;
     }
