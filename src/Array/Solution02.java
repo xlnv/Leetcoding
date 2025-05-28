@@ -1,4 +1,4 @@
-package Solving_2;
+package Array;
 
 public class Solution02 {
 
