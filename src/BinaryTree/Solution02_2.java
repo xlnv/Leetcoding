@@ -22,7 +22,7 @@ public class Solution02_2 {
         root.right.right = new TreeNode(7);
 
         List<Integer> res = inorderTraversal(root);
-        System.out.println(res);
+        System.out.println(res);// [4,2,4,5,6,3,7]
 
     }
 
