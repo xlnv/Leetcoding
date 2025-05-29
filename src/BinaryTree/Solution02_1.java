@@ -3,7 +3,7 @@ package BinaryTree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution02 {
+public class Solution02_1 {
     public static void main(String[] args) {
         // 前序遍历·递归·LC144_二叉树的前序遍历
         // 树结构：
