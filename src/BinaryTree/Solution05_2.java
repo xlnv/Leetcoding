@@ -43,7 +43,7 @@ public class Solution05_2 {
                 if(node.left !=null) queue.offer(node.left);
                 if(node.right !=null) queue.offer(node.right);
             }
-            result.addFirst(currentLevel);
+            result.addFirst(currentLevel);//添加到头部
         }
         return result;
     }
