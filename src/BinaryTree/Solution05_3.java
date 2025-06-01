@@ -41,7 +41,6 @@ public class Solution05_3 {
 
         while (!queue.isEmpty()) {
             int levelSize = queue.size(); // 当前层的节点数
-            System.out.println(levelSize);
 
             // 遍历当前层的所有节点
             for (int i = 0; i < levelSize; i++) {
