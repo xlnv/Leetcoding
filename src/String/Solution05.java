@@ -8,7 +8,9 @@ public class Solution05 {
         //例如，对于输入字符串 "abcdefg" 和整数 2，函数应该将其转换为 "fgabcde"。
         //输入：输入共包含两行，第一行为一个正整数 k，代表右旋转的位数。第二行为字符串 s，代表需要旋转的字符串。
         //输出：输出共一行，为进行了右旋转操作后的字符串。
-        //样例输入：2 abcdefg
+        //样例输入：
+        // 2
+        // abcdefg
         //样例输出：fgabcde
         Scanner scanner = new Scanner(System.in);
         int k = scanner.nextInt();
@@ -16,7 +18,8 @@ public class Solution05 {
         String s = scanner.nextLine();
         char[] arr = s.toCharArray();
         int n = arr.length;
-        k = k % n;
+
+        k = k % n;  // 处理 k > n 的情况
         // 1.整体反转
         reverse(arr, 0, n - 1);
         // 2.反转前k个字符
