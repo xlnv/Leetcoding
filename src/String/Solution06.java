@@ -5,8 +5,8 @@ public class Solution06 {
         //给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。
         //
         //示例 1: 输入: haystack = "hello", needle = "ll" 输出: 2
-        String haystack = "aabaabaabaaf";
-        String needle = "aabaaf";
+        String haystack = "hello";
+        String needle =   "lo";
         System.out.println(strStr(haystack, needle));
     }
 
@@ -39,10 +39,10 @@ public class Solution06 {
     }
 
     public static void getNext(int[] next, String s) {
-        int j = 0; //前缀末尾位置
-        next[0] = 0; //  next[0] 初始化为 0
+        int j = 0; // 前缀末尾位置
+        next[0] = 0; // next[0] 初始化为 0
         for (int i = 1; i < s.length(); i++) {
-            // 如果 s[i] != s[j] ,j 回退到next[j-1]
+            // 如果 s[i] != s[j]，j 回退到 next[j-1]
             while (j > 0 && s.charAt(j) != s.charAt(i)) {
                 j = next[j - 1];
             }
