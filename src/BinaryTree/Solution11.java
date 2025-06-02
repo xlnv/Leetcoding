@@ -51,4 +51,18 @@ public class Solution11 {
 
         return count; // 返回节点总数
     }
+
+    public int countNodes(TreeNode root) {
+        if (root == null) {
+            return 0; // 如果当前节点为空，返回0
+        }
+
+        // 递归计算左子树的节点数
+        int leftCount = countNodes(root.left);
+        // 递归计算右子树的节点数
+        int rightCount = countNodes(root.right);
+
+        // 当前节点数（1）加上左右子树的节点数
+        return 1 + leftCount + rightCount;
+    }
 }
