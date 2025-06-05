@@ -25,7 +25,7 @@ public class Solution05_1 {
         root.right.right = new TreeNode(7);
 
         List<List<Integer>> lists = levelOrder(root);
-        System.out.println(lists);
+        System.out.println(lists); //[[1], [2, 3], [4, 5, 6, 7]]
 
     }
 
