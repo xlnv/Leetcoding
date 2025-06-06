@@ -12,7 +12,7 @@ public class Solution15 {
         //       / \
         //      4   3
         //     / \ / \
-        //    5  7 6
+        //    5  7
 
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(4);
