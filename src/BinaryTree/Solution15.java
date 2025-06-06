@@ -1,10 +1,9 @@
 package BinaryTree;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
-public class Solution14 {
+public class Solution15 {
     public static void main(String[] args) {
         //404.左叶子之和
         //计算给定二叉树的所有左叶子之和。
