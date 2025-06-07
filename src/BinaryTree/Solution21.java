@@ -3,7 +3,7 @@ package BinaryTree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Solution20 {
+public class Solution21 {
     public static void main(String[] args) {
         //617.合并二叉树
         //给定两个二叉树，想象当你将它们中的一个覆盖到另一个上时，两个二叉树的一些节点便会重叠。
