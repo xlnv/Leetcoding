@@ -16,7 +16,7 @@ public class Solution30 {
         root.left.left = new TreeNode(1);
         root.left.right = new TreeNode(3);
         TreeNode node = deleteNode(root, 2);
-        System.out.println(node.levelOrderTraversal());
+        System.out.println(node.levelOrderTraversal()); // [4, 3, 7, 1]
 
     }
 
