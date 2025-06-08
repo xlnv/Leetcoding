@@ -17,7 +17,7 @@ public class Solution29 {
         root.left.left = new TreeNode(1);
         root.left.right = new TreeNode(3);
         TreeNode res = insertIntoBST(root, 5);
-        System.out.println("前序遍历结果" + res.inorderTraversal());
+        System.out.println("前序遍历结果" + res.preorderTraversal());
         System.out.println("中序遍历结果" + res.inorderTraversal());
         System.out.println("后序遍历结果" + res.postorderTraversal());
         System.out.println("层序遍历结果" + res.levelOrderTraversal());
