@@ -19,6 +19,8 @@ public class Solution26 {
         root.left.left = new TreeNode(5);
         root.left.right = new TreeNode(7);
         root.right.left = new TreeNode(6);
+        TreeNode node = lowestCommonAncestor(root, root.left, root.right.right);
+        System.out.println(node.levelOrderTraversal());
 
     }
 
