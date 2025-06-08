@@ -11,7 +11,8 @@ public class Solution18 {
         // 测试用例1
         int[] inorder1 = {4, 2, 5, 1, 6, 3, 7};
         int[] postorder1 = {4, 5, 2, 6, 7, 3, 1};
-        buildTree(inorder1, postorder1);
+        TreeNode node = buildTree(inorder1, postorder1);
+        System.out.println(node.levelOrderTraversal());
 
     }
 
