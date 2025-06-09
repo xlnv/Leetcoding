@@ -37,16 +37,21 @@ public class Solution05 {
     }
 
     public static void backtrack(String digits, int index,StringBuilder path, String[] numString, List<String> result) {
+        // 如果当前组合长度等于数字串长度，说明已经完成一个组合
         if (index == digits.length()) {
             result.add(path.toString());
             return;
         }
+
+        // 获取当前数字对应的字母串
         char digit = digits.charAt(index);
         String letters = numString[digit - '0'];
+
+        // 遍历当前数字对应的所有字母
         for (int i = 0; i < letters.length(); i++) {
-            path.append(letters.charAt(i));
-            backtrack(digits,index+1,path,numString,result);
-            path.deleteCharAt(path.length() - 1);
+            path.append(letters.charAt(i)); // 添加当前字母
+            backtrack(digits, index + 1, path,numString, result); // 递归处理下一个数字
+            path.deleteCharAt(path.length() - 1); // 回溯，移除最后添加的字母
         }
     }
 }
