@@ -30,7 +30,7 @@ public class Solution08 {
 
 
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        Arrays.sort(candidates);
+        Arrays.sort(candidates);// 排序，让相同数字相邻
         backtrack(candidates,target,0);
         return result;
 
