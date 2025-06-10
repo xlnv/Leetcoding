@@ -20,38 +20,46 @@ import java.util.List;
 
 public class Solution05 {
     public static void main(String[] args) {
-        System.out.println(letterCombinations("23"));
+        System.out.println(letterCombinations("23")); // [ad, ae, af, bd, be, bf, cd, ce, cf]
 
     }
 
+    //设置全局列表存储最后的结果
+    private static  List<String> result = new ArrayList<>();
+    private static StringBuilder  path = new StringBuilder();
+
     public static List<String> letterCombinations(String digits) {
-        List<String> result = new ArrayList<>();
         if (digits == null || digits.length() == 0) {
             return result;
         }
 
+        //初始对应所有的数字，为了直接对应2-9，新增了两个无效的字符串""
         String[] numString = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
-        backtrack(digits, 0, new StringBuilder(), numString, result);
+
+        backtrack(digits, numString, 0);
+
         return result;
 
     }
 
-    public static void backtrack(String digits, int index,StringBuilder path, String[] numString, List<String> result) {
-        // 如果当前组合长度等于数字串长度，说明已经完成一个组合
+    public static void backtrack(String digits, String[] numString, int index) {
+        //递归遍历结果判断
         if (index == digits.length()) {
             result.add(path.toString());
             return;
         }
 
-        // 获取当前数字对应的字母串
-        char digit = digits.charAt(index);
-        String letters = numString[digit - '0'];
+        String str = numString[digits.charAt(index) - '0']; //str 表示当前num对应的字符串
 
-        // 遍历当前数字对应的所有字母
-        for (int i = 0; i < letters.length(); i++) {
-            path.append(letters.charAt(i)); // 添加当前字母
-            backtrack(digits, index + 1, path,numString, result); // 递归处理下一个数字
-            path.deleteCharAt(path.length() - 1); // 回溯，移除最后添加的字母
+        for (int i = 0; i < str.length(); i++) {
+
+            path.append(str.charAt(i));
+            //递归，处理下一层
+            backtrack(digits, numString, index + 1);
+            //剔除末尾的继续尝试
+            path.deleteCharAt(path.length()-1);
         }
     }
+
+
 }
