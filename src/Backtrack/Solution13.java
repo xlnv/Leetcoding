@@ -27,7 +27,7 @@ public class Solution13 {
 
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(nums);
+        Arrays.sort(nums);//为了将重复的数字都放到一起，所以先进行排序
 
         backtrack(nums,result,new ArrayList<>(),0);
 
