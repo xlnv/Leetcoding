@@ -20,8 +20,8 @@ import java.util.Arrays;
  */
 public class Solution02 {
     public static void main(String[] args) {
-        int[] g = {1, 2, 3};
-        int[] s = {1, 1};
+        int[] g = {10, 9, 8, 7};
+        int[] s = {10, 9, 8, 7};
         Solution02 solution02 = new Solution02();
         System.out.println(solution02.findContentChildren(g, s)); // 1
     }
