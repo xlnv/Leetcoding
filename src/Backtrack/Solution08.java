@@ -30,8 +30,10 @@ public class Solution08 {
 
 
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        boolean[] used = new boolean[candidates.length];  // 标记数组
         Arrays.sort(candidates);// 排序，让相同数字相邻
         backtrack(candidates,target,0);
+        backtracking(candidates,target,0,used); // 容易理解的去重方法，使用标记数组
         return result;
 
     }
@@ -58,6 +60,27 @@ public class Solution08 {
             backtrack(candidates, target-candidates[i], i+1);
             temp.removeLast();
 
+        }
+    }
+
+    public static void backtracking(int[] candidates, int target, int start, boolean[] used) {
+        if (target == 0) {
+            result.add(new ArrayList<>(temp));
+        }
+
+        for (int i = start; i < candidates.length; i++) {
+            // // 去重逻辑：前一个相同数字未被使用，则跳过
+            if (i > 0 && candidates[i] == candidates[i - 1] && used[i - 1] == false) {
+                continue;
+            }
+            if (candidates[i] > target) {
+                break;
+            }
+            used[i] = true;
+            temp.add(candidates[i]);
+            backtracking(candidates, target - candidates[i], i + 1, used);
+            temp.remove(temp.size() - 1);
+            used[i] = false;
         }
     }
 }
