@@ -24,13 +24,17 @@ public class Solution04 {
         if (nums == null || nums.length == 0) {
             return 0;
         }
-        int maxSum = nums[0];
-        int currentSum = nums[0];
+
+        int maxSum = nums[0]; // 初始化全局最大和为第一个元素
+        int currentSum = nums[0]; // 当前子数组的和也初始化为第一个元素
 
         for (int i = 1; i < nums.length; i++) {
+            // 决定是继续扩展当前子数组，还是以当前元素开始新的子数组
             currentSum = Math.max(nums[i], currentSum + nums[i]);
-            maxSum = Math.max(currentSum, maxSum);
+            // 更新全局最大和
+            maxSum = Math.max(maxSum, currentSum);
         }
+
         return maxSum;
     }
 }
