@@ -1,4 +1,7 @@
 package GreedyAlgorithm;
+
+import java.util.Arrays;
+
 /*
 53. 最大子序和
 力扣题目链接(opens new window)
@@ -17,6 +20,7 @@ public class Solution04 {
         Solution04 solution04 = new Solution04();
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         System.out.println(solution04.maxSubArray(nums)); //  6
+        System.out.println(Arrays.toString(solution04.maxSubArrayWithIndices(nums))); // [3,6]
 
     }
 
@@ -36,5 +40,31 @@ public class Solution04 {
         }
 
         return maxSum;
+    }
+
+    public int[] maxSubArrayWithIndices(int[] nums) {
+        if (nums == null || nums.length == 0) return new int[]{-1, -1};
+
+        int maxSum = nums[0];
+        int currentSum = nums[0];
+        int start = 0, end = 0;
+        int tempStart = 0; // 临时起始索引
+
+        for (int i = 1; i < nums.length; i++) {
+            if (currentSum + nums[i] > nums[i]) {
+                currentSum += nums[i];
+            } else {
+                currentSum = nums[i];
+                tempStart = i; // 更新临时起点
+            }
+
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+                start = tempStart;
+                end = i;
+            }
+        }
+
+        return new int[]{start, end};
     }
 }
