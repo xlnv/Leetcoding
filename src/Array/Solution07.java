@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Solution07 {
     public static void main(String[] args) {
+        //58. 区间和
         //给定一个整数数组 Array，请计算该数组在每个指定区间内元素的总和。
         //
         //输入描述
